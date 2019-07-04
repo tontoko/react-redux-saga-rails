@@ -13,7 +13,6 @@ const updateAjax = (id, product) => axios.patch(`http://localhost:3001/products/
 function* updateProduct(action) {
     const { data, error, id } = yield call(updateAjax, action.id, action.data);
     if (data && id) {
-        // 成功したので適当なactionをdispatchして画面更新
         yield put({ type: "UPDATE_SUCCEEDED", data, id });
     } else {
         // todo: エラーハンドリング

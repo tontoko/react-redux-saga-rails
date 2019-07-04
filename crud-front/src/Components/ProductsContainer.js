@@ -18,20 +18,13 @@ class ProductsContainer extends React.Component {
     }
 }
 
-// export default ProductsContainer
 
 function mapStateToProps(state) {
     return state
 }
 
 function mapDispatchToProps(dispatch) {
-    return {
-        init: () => dispatch(Actions.init())
-    }
+    return bindActionCreators(Actions, dispatch)
 }
-
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators(Actions, dispatch)
-// }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer)

@@ -16,7 +16,6 @@ function* initProduct() {
     console.log(data)
 
     if (data) {
-        // 成功したので適当なactionをdispatchして画面更新
         yield put({ type: "INIT_SUCCEEDED", data });
     } else {
         // todo: エラーハンドリング

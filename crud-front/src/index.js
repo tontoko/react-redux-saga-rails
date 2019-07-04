@@ -7,9 +7,6 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import Reducers from './Reducers/reducers'
 
-import axios from "axios"
-import { put, call, takeEvery } from 'redux-saga/effects';
-
 import { all } from 'redux-saga/effects'
 
 import createSagaMiddleware from 'redux-saga'

@@ -1,6 +1,4 @@
 import React from 'react'
-import axios from "axios"
-import update from 'react-addons-update'
 import ProductsContainer from "./ProductsContainer"
 import FormContainer from "./FormContainer"
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,7 +13,7 @@ class MainContainer extends React.Component {
     componentDidMount() {
         this.props.init()
     }
-    
+
     render() {
         if (this.props.isFetching === true) {
             return (<div />)
@@ -30,11 +28,11 @@ class MainContainer extends React.Component {
     }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     return state
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
     return {
         init: () => dispatch(Actions.init()),
         create: (data) => dispatch(Actions.create(data)),
@@ -43,7 +41,7 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-// function mapDispatchToProps(dispatch) {
+// const mapDispatchToProps = dispatch => {
 //     return bindActionCreators(Actions, dispatch)
 // }
 
